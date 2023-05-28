@@ -1,5 +1,3 @@
-# API_project2
-
  # Project Proposal
 Creating a RESTfull API with frond-end
 
