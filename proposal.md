@@ -3,7 +3,7 @@ Creating a RESTfull API with frond-end
 - 3rd party URL below
 
 [Free to play Games](https://www.freetogame.com/api-doc)
- ![free-to-play](../API_procejt2/images/free-to-play.png)
+ ![free-to-play](https://github.com/AleksBulajic/API_project2/blob/main/images/free-to-play.png?raw=true)
   
  ## Project name and description    
  ### No pay to Play
