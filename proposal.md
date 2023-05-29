@@ -1,22 +1,40 @@
  # Project Proposal
 Creating a RESTfull API with frond-end
-```
-https://www.freetogame.com/api-doc
-```
+- 3rd party URL below
 
+[Free to play Games](https://www.freetogame.com/api-doc)
+ ![free-to-play](../API_procejt2/images/free-to-play.png)
   
  ## Project name and description    
  ### No pay to Play
 
-        this applications will provide you with free to play games, you can have a randomized game you could play for free or you can search for a  genre of the game example: 'Shoter','MMORPG'
+        this applications will provide you with free to play games, you can have a randomized game that you could play for free or you can search for a  genre of the game example: 'Shoter','MMORPG'
 
 ### Routes and models
-    GET /games: Retrieves a list of all jokes.
-    GET /games/:id: Retrieves a specific joke by its ID.
+   - routes
+
+    GET /games: Retrieves a list of all free to play games.
+    GET /games/:id: Retrieves a specific game by its ID.
     GET /games/:genre: Retrieves games based on genre
-    POST /games: Creates a new joke.
-    PUT /games/:id: Updates an existing joke.
-    DELETE /games/:id: Deletes a joke.
+    POST /games: Creates a new game.
+    PUT /games/:id: Updates an existing game.
+    DELETE /games/:id: Deletes a game.
+
+  - models
+```
+    const gamesSchema = new Schema({  
+    
+    title: String,
+    short_description: String ,
+    genre: String,
+    platform: String,
+    publisher: String,
+    developer: String,
+    release_date: String,
+    freetogame_profile_url: String
+  }),
+  ```
+  
 
 ### User Stories
     As a user, I should be able to query the /games route to GET all free games.
@@ -31,7 +49,7 @@ https://www.freetogame.com/api-doc
     4. implement a route to be able to add a free to play game
 
 ### Stretch Goals
-    1. Seach game  by genre.
-    2. Have a more animated front-end version.
+    1. Seach game by genre.
+    2. Have a more animated front-end.
     3. Have a user authentication.
-    4. havng a rating system.
+    4. Havng a rating system.
