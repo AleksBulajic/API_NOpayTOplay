@@ -8,7 +8,7 @@ Creating a RESTfull API with frond-end
  ## Project name and description    
  ### No pay to Play
 
-        this applications will provide you with free to play games, you can have a randomized game that you could play for free or you can search for a  genre of the game example: 'Shoter','MMORPG'
+ this applications will provide you with free to play games, you can have a randomized game that you could play for free or you can search for a  genre of the game example: 'Shoter','MMORPG'
 
 ### Routes and models
    - routes
