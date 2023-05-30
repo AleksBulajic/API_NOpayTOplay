@@ -1,4 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
+const Schema = mongoose.Schema;
+
 
 const gamesSchema = new Schema({  
     
@@ -16,7 +18,6 @@ const gamesSchema = new Schema({
     freetogame_profile_url: String
   })
 
-  const Games = mongoose.model('Games',gamesSchema);
-
-  module.export = Games
+ 
+export default mongoose.model('Games',gamesSchema);
 

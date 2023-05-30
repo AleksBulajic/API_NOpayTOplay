@@ -1,32 +1,27 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const {  getGames,
-    getGamesById,
-    getGamesByGenre,
-    createGames,
-    updateGameById,
-    deleteGameById } = require('../controller/gameController.js')
+import * as controllers from '../controller/gameController.js'
 
 
 //retrive a list of all free games
-router.get('/', getGames)
+router.get('/', controllers.getGames)
 
 
 //retrive a speciic game by id
-router.get('/:id',getGamesById)
+router.get('/:id',controllers.getGamesById)
 
 
 //retrive a specific game by genre
-router.get('/:genre', getGamesByGenre)
+router.get('/:genre', controllers.getGamesByGenre)
 //Create a new game
 
 
-router.post('/', createGames)
+router.post('/', controllers.createGames)
 //Update a game by id
-router.put('/:id',updateGameById)
+router.put('/:id',controllers.updateGameById)
 
 
 //delete  games by id
-router.delete('/:id', deleteGameById)
+router.delete('/:id', controllers.deleteGameById)
  
-module.exports = router
+export default router
