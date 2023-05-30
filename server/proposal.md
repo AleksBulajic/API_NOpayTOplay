@@ -19,12 +19,18 @@ Creating a RESTfull API with frond-end
     POST /games: Creates a new game.
     PUT /games/:id: Updates an existing game.
     DELETE /games/:id: Deletes a game.
+    POST /favorites allowes user to add a game to  myFavotites.
+    GET /favorites get all of  myFavotites.
+    DELETE /favorites/:id: Deletes from myFavotites.
 
-  - models
+  #### models
+
+  - game model
 ```
     const gamesSchema = new Schema({  
     
     title: String,
+    thumbnail: String 
     short_description: String ,
     genre: String,
     platform: String,
@@ -34,7 +40,15 @@ Creating a RESTfull API with frond-end
     freetogame_profile_url: String
   }),
   ```
-  
+  - favorites model
+  ```
+  const myFavoritesSchema = new Schema {
+    game: {
+      type: Schema.Types.ObjectId,
+      ref: gamesSchema
+    }
+  }
+  ```
 
 ### User Stories
     As a user, I should be able to query the /games route to GET all free games.
@@ -42,14 +56,21 @@ Creating a RESTfull API with frond-end
     As a user, I should be able to submit a game by making a POST request to the /game route.
     As a user, I should be able to update an existing game by making a PUT request to the /game/:id route.
     As a user, I should be able to delete a game by making a DELETE request to the /games/:id route.
+    As a user, I should be able to add games to myFavotites collection.
+    As a user, I should be able to query myFavotites.
 ### MVP Goals
     1. Implement the route to be able to retrive all free to play games.
     2. Implement the route to be able to retrve game by id.
-    3. Implement the route to be able to delete a game
-    4. implement a route to be able to add a free to play game
+    3. Implement the route to be able to delete a favorite.
+    4. Implement a route to be able to add a free to play game.
+    5. Implement the route to be able to add to myFavotites collection.
+    6. Implement the route to be able to seach myFavorites.
+    8. Implement a route that will update an existing game in myFavotites collection.
+    7. Implement the route to delete from myFavorites
+
 
 ### Stretch Goals
-    1. Seach game by genre.
+    1. Search game by genre.
     2. Have a more animated front-end.
     3. Have a user authentication.
     4. Havng a rating system.
