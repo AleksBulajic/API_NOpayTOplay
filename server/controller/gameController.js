@@ -39,12 +39,11 @@ const deleteGameById = (req,res) => {
 }
 
 
-module.exports = {
+export {
     getGames,
     getGamesById,
     getGamesByGenre,
     createGames,
     updateGameById,
     deleteGameById
-
-}
+};

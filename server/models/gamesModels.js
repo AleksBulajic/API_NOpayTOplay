@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 const gamesSchema = new Schema({  
     
     title: {
-      type: String
-      //add required
+      type: String,
+      require:  true,
     },
     thumbnail: String ,
     short_description: String,

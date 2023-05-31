@@ -1,3 +1,5 @@
+//---------------------------------------------------------------------------------------------
+
 // const fs = require('fs');
 // const axios = require('axios');
 
@@ -16,6 +18,11 @@
 //   .catch((error) => {
 //     console.error('Error fetching data from API:', error);
 //   });
+
+// data was successfully imported ^^^^^^^^^^^^^^^^^^^^^^^^^^^-------------------------------------------------------------------
+
+
+
 import db from './connection.js'
 import GameModel from '../models/gamesModels.js'
 import games from '../data/games.json' assert {type: 'json'}
