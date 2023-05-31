@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import connectDB from '../server/db/connection.js';
+import connectDB from './db/connection.js';
 import gamesRoutes from './routes/gamesRoutes.js';
 
 const port = process.env.PORT || 6000;

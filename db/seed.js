@@ -24,7 +24,7 @@
 
 
 import db from './connection.js'
-import GameModel from '../models/gamesModels.js'
+import GameModel from '../server/models/gamesModels.js'
 import games from '../data/games.json' assert {type: 'json'}
 
 const seedData = async () => {
