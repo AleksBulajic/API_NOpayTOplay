@@ -1,49 +1,103 @@
+import Game from "../models/gamesModels.js"
+
+
 
 //  get games
 // route GET /games
+export const getGames =  async (req,res) => {
 
-const getGames =  async (req,res) => {
-    res.status(200).json({message: "Get Games"})
+   try{
+    const games = await Game.find()
+    console.log(games)
+    res.json(games)
+   }catch(error){
+    console.log(error)
+    res.status(500).json({error: error.message})
+   }
+
 }
 
 // description get game by id
 // route GET /games/:id
 
-const getGamesById =  async (req,res) => {
-    res.status(200).json({message: "Get Games by id"})
+export const getGamesById =  async (req,res) => {
+   const gameId = req.params.id;
+
+     Game.findById(gameId)
+     .then(game => {
+        if(!game) {
+            return res.status(404).json({error: "Game not found"})
+        }
+        res.json(game)
+     })
+     .catch(error => res.status(500).json({error: error.message}));
 }
 
 // description get game by genre
 // route GET /games/:genre
+export const getGamesByGenre = async (req, res) => {
+    try {
+        const games = await Game.find({ genre: req.params.genre });
+        console.log(games)
+        if (games.length === 0) {
+            return res.status(404).json({ message: 'No games found with the specified genre' });
+        }
+        res.status(200).json(games);
+    } catch (err) {
+        return res.status(500).json({ message: err.message });
+    }
+};
 
-const getGamesByGenre = async (req,res) => {
-    res.status(200).json({message: "Get Games by genre"})
-}
+
 // description create game
 // route POST /games
+// TODO: adding a game wiht  my own data
+export const createGames = async (req,res) => {
+    try{
+        const game = new Game(req.body)
+        await game.save()
+        res.status(201).json(game)
 
-const createGames = async (req,res) => {
-    res.status(200).json ({message: "Create Game"})
+    }catch(error){
+        console.log(error)
+        res.status(500).json({error: error.message})
+       }
 }
+// need to double check hot to create games wiht my own daat  not just copy from an existing game
+
 // description update game
 // route PUT /games/:id
 
-const updateGameById =  async (req,res) => {
-    res.status(200).json({message: `update game ${req.params.id}`})
-}
+export const updateGameById = async (req, res) => {
+    const gameId = req.params.id;
+    const updateGame = req.body;
+
+    Game.findByIdAndUpdate(gameId, updateGame, { new: true })
+        .then(game => {
+            if (!game) {
+                return res.status(404).json({ error: 'Game not found' });
+            }
+            res.json(game);
+        })
+        .catch(error => {
+            res.status(500).json({ error: error.message });
+        });
+};
+
 // description delete game
 // route DELETE /games/:id
 
-const deleteGameById =  async (req,res) => {
-    res.status(200).json({message: `delete game ${req.params.id}`})
+export const deleteGameById =  async (req,res) => {
+   const gameId = req.params.id;
+
+   Game.findByIdAndRemove(gameId)
+   .then(game => {
+    if(!game){
+        return res.status(404).json({error: 'Game not found'});
+    }
+    res.json({message: 'Game deleted succesfully'})
+   })
+   .catch(error => res.status(500).json({error: error.message}));
 }
 
 
-export {
-    getGames,
-    getGamesById,
-    getGamesByGenre,
-    createGames,
-    updateGameById,
-    deleteGameById
-};

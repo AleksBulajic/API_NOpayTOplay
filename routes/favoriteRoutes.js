@@ -1,6 +1,7 @@
-import express from "express";
-const router = express.Router()
-import * as controllers from '/Users/aleksandarbulajic/Desktop/GAcode/unit-2/projects/project_2/API_procejt2/controller/favoriteController.js'
+import {Router } from "express";
+import * as controllers from '../controller/favoriteController.js'
+
+const router = Router()
 
 //add/ create your favorite game
 router.post('/',controllers.createFavorite)

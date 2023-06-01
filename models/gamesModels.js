@@ -2,11 +2,14 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 
-const gamesSchema = new Schema({  
-    
+ export const Game = new Schema({  
+    id: {
+      type: Number,
+      required: false
+    },
     title: {
       type: String,
-      required:  true,
+      required:  false
     },
     thumbnail: {
       type: String ,
@@ -14,27 +17,27 @@ const gamesSchema = new Schema({
     },
     short_description: {
       type: String,
-      required: true
+      required: false
     },
     genre: {
       type: String,
-      required: true
+      required: false
     },
     platform: {
       type: String,
-      required: true
+      required: false
     },
     publisher: {
       type: String,
-      required: true
+      required: false
     },
     developer: {
       type: String,
-      required: true
+      required: false
     },
     release_date: {
       type: String,
-      required: true
+      required: false
     },
     freetogame_profile_url: {
      type:  String,
@@ -43,5 +46,4 @@ const gamesSchema = new Schema({
 })
 
  
-export default mongoose.model('Games',gamesSchema);
-
+export default mongoose.model('game',Game);
