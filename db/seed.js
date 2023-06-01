@@ -7,7 +7,7 @@
 //   .then((response) => {
 //     const games = response.data;
 
-//     fs.writeFile('server/data/games.json', JSON.stringify(games, null, 2), (err) => {
+//     fs.writeFile('data/games.json', JSON.stringify(games, null, 2), (err) => {
 //       if (err) {
 //         console.error('Error writing to file:', err);
 //       } else {

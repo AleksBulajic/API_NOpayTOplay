@@ -1,6 +1,7 @@
 import Favorite from '../models/favoritModules.js';
 import Game from '../models/gamesModels.js';
 
+
 // Create your favorite game
 // Route: POST /favorite
 export const createFavorite = async (req, res) => {
@@ -22,6 +23,8 @@ export const createFavorite = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+
 
 
 

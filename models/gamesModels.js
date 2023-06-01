@@ -3,10 +3,7 @@ const Schema = mongoose.Schema;
 
 
  export const Game = new Schema({  
-    id: {
-      type: Number,
-      required: false
-    },
+  
     title: {
       type: String,
       required:  false
@@ -46,4 +43,4 @@ const Schema = mongoose.Schema;
 })
 
  
-export default mongoose.model('game',Game);
+export default mongoose.model('games', Game);
