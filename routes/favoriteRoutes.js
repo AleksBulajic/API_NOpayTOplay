@@ -4,7 +4,7 @@ import * as controllers from '../controller/favoriteController.js'
 const router = Router()
 
 //add/ create your favorite game
-router.post('/',controllers.createFavorite)
+router.post('/create/:id',controllers.createFavorite)
 
 // get your favorite game by id
 router.get('/:id',controllers.getFavoriteById)

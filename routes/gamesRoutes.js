@@ -17,6 +17,13 @@ router.get('/:id',controllers.getGamesById)
 // //retrive a specific game by genre
 router.get('/genre/:genre', controllers.getGamesByGenre)
 
+
+
+//get game by title
+router.get('/title/:title', controllers.getGamesByTitle)
+
+
+
 // //Create a new game
 router.post('/all', controllers.createGames)
 

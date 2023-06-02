@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Game from "../models/gameModel.js"
 
 const Schema = mongoose.Schema;
 
@@ -7,10 +8,10 @@ const Schema = mongoose.Schema;
 const Favorite = new Schema ({
  
   game: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: 'Game'
     }
   })
 
-  export default mongoose.model('favorite',Favorite);
+  export default mongoose.model('favorites',Favorite);
 

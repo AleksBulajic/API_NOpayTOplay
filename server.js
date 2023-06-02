@@ -5,7 +5,7 @@ import db from './db/connection.js';
 import gamesRoutes from './routes/gamesRoutes.js';
 import favoriteRoutes from './routes/favoriteRoutes.js';
 
-const port = process.env.PORT || 6000;
+const port = process.env.PORT || 3030;
 
 dotenv.config();
 

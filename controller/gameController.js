@@ -1,4 +1,4 @@
-import Game from "../models/gamesModels.js"
+import Game from "../models/gameModel.js"
 
 
 
@@ -15,12 +15,13 @@ export const getGames =  async (req,res) => {
     res.status(500).json({error: error.message})
    }
 
-}
+} 
 
 // description get game by id
 // route GET /games/:id
 
 export const getGamesById =  async (req,res) => {
+    console.log(req.params.id)
    const gameId = req.params.id;
 
      Game.findById(gameId)
@@ -47,6 +48,19 @@ export const getGamesByGenre = async (req, res) => {
         return res.status(500).json({ message: err.message });
     }
 };
+// get game by title /favorite/title/:title
+export const getGamesByTitle = async (req, res) => {
+    try {
+        const games = await Game.find({ title: req.params.title });
+        console.log(games)
+        if (games.length === 0) {
+            return res.status(404).json({ message: 'No games found with the specified Title' });
+        }
+        res.status(200).json(games);
+    } catch (err) {
+        return res.status(500).json({ message: err.message });
+    }
+};
 
 
 // description create game
@@ -63,7 +77,7 @@ export const createGames = async (req,res) => {
         res.status(500).json({error: error.message})
        }
 }
-// need to double check hot to create games wiht my own daat  not just copy from an existing game
+// need to double check hot to create games wiht my own data  not just copy from an existing game
 
 // description update game
 // route PUT /games/:id
