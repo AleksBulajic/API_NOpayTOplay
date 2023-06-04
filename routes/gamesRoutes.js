@@ -33,6 +33,6 @@ router.put('/:id',controllers.updateGameById)
 
 
 // //delete  games by id
-router.delete('/:id', controllers.deleteGameById)
+router.delete('/delete/:id', controllers.deleteGameById)
  
 export default router

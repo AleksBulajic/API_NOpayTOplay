@@ -64,8 +64,7 @@ Creating a RESTfull API with frond-end
     3. Implement the route to be able to delete a favorite.
     4. Implement a route to be able to add a free to play game.
     5. Implement the route to be able to add to myFavotites collection.
-    6. Implement the route to be able to seach myFavorites.
-    8. Implement a route that will update an existing game in myFavotites collection.
+    6. Implement the route to be able to serach myFavorites.
     7. Implement the route to delete from myFavorites
 
 
