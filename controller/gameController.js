@@ -103,8 +103,9 @@ export const updateGameById = async (req, res) => {
 
 export const deleteGameById =  async (req,res) => {
    const gameId = req.params.id;
+   console.log(gameId);
 
-   Game.findByIdAndRemove(gameId)
+  await  Game.findByIdAndRemove(gameId)
    .then(game => {
     if(!game){
         return res.status(404).json({error: 'Game not found'});
