@@ -32,9 +32,7 @@ The project aims to create a web application that utilizes the Free to Game API,
 - POST /games/all: Creates a new game.
 - PUT /games/:id: Updates an existing game.
 - DELETE /games/:id: Deletes a game.
-- POST /favorites: Allows users to add a game to their favorites.
-- GET /favorites: Retrieves all games in the favorites collection.
-- DELETE /favorites/:id: Deletes a game from the favorites collection.
+
 
 ### Models
 
@@ -53,3 +51,16 @@ const gamesSchema = new Schema({
   freetogame_profile_url: String
 });
 ```
+
+### MVP Goals
+    1. Implement the route to be able to retrive all free to play games.
+    2. Implement the route to be able to retrve game by id.
+    3. Implement the route to be able to delete a favorite.
+    4. Implement a route to be able to add a free to play game.
+    
+
+### Stretch Goals
+    1. Search game by genre.
+    2. Have a more animated front-end.
+    3. Have a user authentication.
+    4. Havng a Favorite button that adds to the favorite database.

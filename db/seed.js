@@ -26,6 +26,8 @@
 import db from './connection.js'
 import Game from '../models/gamesModels.js'
 import games from '../data/games.json' assert {type: 'json'}
+// games.map((game) => ({...game, favorited: false}));
+
 
 const seedData = async () => {
     

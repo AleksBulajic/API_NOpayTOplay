@@ -12,7 +12,7 @@ export const createFavorite = async (req, res) => {
         console.log({gameId})
         
         // check if the game exist 
-        const game = await Game.findById({gameId});
+        const game = await Game.findById(gameId);
         console.log(game)
         if(!game){
             return res.status(404).json({ message: 'Game not found'});

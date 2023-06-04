@@ -39,6 +39,10 @@ const Schema = mongoose.Schema;
     freetogame_profile_url: {
      type:  String,
      required: false
+  },
+  favorited: {
+    type: Boolean,
+    default: false
   }
 })
 
