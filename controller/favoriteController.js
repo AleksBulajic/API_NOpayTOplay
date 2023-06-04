@@ -27,12 +27,6 @@ export const createFavorite = async (req, res) => {
               res.status(500).json({ message: 'Internal server error' });
         }
 };
-//
- 
-
-
-
-
 
 //get your favorite game by id
 //route GET /favorite/:id

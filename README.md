@@ -52,15 +52,29 @@ const gamesSchema = new Schema({
 });
 ```
 
+```javascript
+
+
+const Favorite = new Schema ({
+ 
+  game: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Game'
+    }
+  })
+```
+
 ### MVP Goals
     1. Implement the route to be able to retrive all free to play games.
     2. Implement the route to be able to retrve game by id.
     3. Implement the route to be able to delete a favorite.
     4. Implement a route to be able to add a free to play game.
-    
+    5. Implement the route to be able to add to myFavotites collection.
+    6. Implement the route to be able to serach myFavorites.
+    7. Implement the route to delete from myFavorites
 
-### Stretch Goals
-    1. Search game by genre.
-    2. Have a more animated front-end.
-    3. Have a user authentication.
-    4. Havng a Favorite button that adds to the favorite database.
+## Streach Goals
+
+    1.Implement user authentication: Add user registration and login functionality, allowing users to have personalized accounts and securely manage their favorite games.
+    2.Implement user profiles: Create user profiles where users can view and manage their personal information, preferences, and game history.
+    3.Implement sorting and filtering: Allow users to sort games based on various criteria such as release date, genre, or platform. Additionally, provide filtering options to refine the displayed games based on user preferences.

@@ -1,23 +1,23 @@
 //---------------------------------------------------------------------------------------------
 
-// const fs = require('fs');
-// const axios = require('axios');
+const fs = require('fs');
+const axios = require('axios');
 
-// axios.get('https://www.freetogame.com/api/games')
-//   .then((response) => {
-//     const games = response.data;
+axios.get('https://www.freetogame.com/api/games')
+  .then((response) => {
+    const games = response.data;
 
-//     fs.writeFile('data/games.json', JSON.stringify(games, null, 2), (err) => {
-//       if (err) {
-//         console.error('Error writing to file:', err);
-//       } else {
-//         console.log('Data imported successfully.');
-//       }
-//     });
-//   })
-//   .catch((error) => {
-//     console.error('Error fetching data from API:', error);
-//   });
+    fs.writeFile('data/games.json', JSON.stringify(games, null, 2), (err) => {
+      if (err) {
+        console.error('Error writing to file:', err);
+      } else {
+        console.log('Data imported successfully.');
+      }
+    });
+  })
+  .catch((error) => {
+    console.error('Error fetching data from API:', error);
+  });
 
 // data was successfully imported ^^^^^^^^^^^^^^^^^^^^^^^^^^^-------------------------------------------------------------------
 
@@ -42,7 +42,5 @@ seedData()
 
 //-----data imporeted to mongosh----------//
 
-// import db from './connection.js'
-// import FavoriteModel from '../server/models/favoritesModels.js'
-// import favorite from '../data/favorite.jason' assert {type: 'json'}
+
 
