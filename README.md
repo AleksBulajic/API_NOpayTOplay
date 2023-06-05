@@ -3,6 +3,7 @@
 
     # No Pay to Play
 
+[Free to play Games](https://www.freetogame.com/api-doc)
 ![free-to-play](https://github.com/AleksBulajic/API_project2/blob/main/images/free-to-play.png?raw=true)
 
 This application provides a RESTful API with a front-end interface that allows users to access and explore a collection of free-to-play games. Users can browse through a list of games, search for games by genre, and add their favorite games to a personalized collection.
